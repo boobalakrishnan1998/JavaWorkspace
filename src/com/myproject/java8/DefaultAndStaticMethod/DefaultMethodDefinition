@@ -1,0 +1,22 @@
+Default Method
+
+    Default methods are methods that can have a body. The most important use of default methods in interfaces is to
+    provide additional functionality to a given type without breaking down the implementing classes.
+
+    The default methods were introduced to provide backward compatibility so that existing interfaces can use the lambda
+    expressions without implementing the methods in the implementation class. Default methods are also known as defender
+    methods or virtual extension methods.
+
+Default Methods and Multiple Inheritance
+
+	In case both the implemented interfaces contain default methods with same
+	method signature, the implementing class should explicitly specify which default method is to be used or it should
+	override the default method
+
+Example
+
+	‘List’ or ‘Collection’ interfaces do not have ‘forEach’ method declaration. Thus, adding such method will
+	simply break the collection framework implementations. Java 8 introduces default method so that List/Collection
+	interface can have a default implementation of forEach method, and the class implementing these interfaces need not
+	implement the same Advantages of Default Method: Default methods were introduced to provide backward compatibility for
+	old interfaces so that they can have new methods without affecting existing code.

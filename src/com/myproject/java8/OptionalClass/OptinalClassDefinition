@@ -1,0 +1,23 @@
+Optional Class
+Java 8 has introduced a new class Optional in java.util package.
+                It is used to represent a value is present or absent
+
+Optional is intended to provide a limited mechanism for library method
+return types where there needed to be a clear way to represent “no result,"
+and using null for such was overwhelmingly likely to cause errors
+
+Advantages of Java 8 Optional:
+    Null checks are not required.
+    No more NullPointerException at run-time.
+    We can develop clean and neat APIs.
+    No more Boiler plate code
+
+Misuse of Optionals
+Optional is not meant to be used in these contexts, as it won't buy us anything:
+
+in the domain model layer (not serializable)
+in DTOs (same reason)
+in input parameters of methods
+in constructor parameters
+
+https://dzone.com/articles/using-optional-correctly-is-not-optional

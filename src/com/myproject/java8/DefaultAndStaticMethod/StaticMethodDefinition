@@ -1,0 +1,21 @@
+Static Methods
+ Static Methods in Interface are those methods, which are defined in the interface with the keyword static.
+ Unlike other methods in Interface, these static methods contain the complete definition of the function
+ and since the definition is complete and the method is static, therefore these methods cannot be overridden
+ or changed in the implementation class.
+
+ Since static methods don't belong to a particular object, they're not part of the API of the classes implementing the interface;
+    therefore, they have to be called by using the interface name preceding the method name.
+
+Important points
+   Java interface static method is part of interface, we can’t use it for implementation class objects.
+   Java interface static methods are good for providing utility methods,
+       for example null check, collection sorting etc.
+   Java interface static method helps us in providing security by not allowing implementation
+        classes to override them.
+   We can’t define interface static method for Object class methods, we will get compiler error as “This static method cannot hide the instance method from Object”. This is because it’s not allowed in java, since Object is the base class for all the classes and
+
+   we can’t have one class level static method and another instance method with same signature
+
+   We can use java interface static methods to remove utility classes such as Collections and move all of it’s static methods to the corresponding interface,
+       that would be easy to find and use.
