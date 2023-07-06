@@ -21,7 +21,7 @@ public class StringPreDefinedMethods {
         System.out.println(str.trim());
         System.out.println(str.replace("india", "tamil nadu"));
         System.out.println(str.replace('i', 't'));
-        System.out.println(str.strip());
+        //System.out.println(str.strip());
         System.out.println(str.codePointAt(1));
         System.out.println(str.codePointBefore(1));
         System.out.println(str.codePointCount(4,7));
