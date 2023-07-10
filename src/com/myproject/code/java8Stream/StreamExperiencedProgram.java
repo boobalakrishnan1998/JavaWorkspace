@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamExperiencedProgram {
 
@@ -101,7 +101,7 @@ public class StreamExperiencedProgram {
         System.out.println(LocalTime.now());
         System.out.println(LocalDateTime.now());
 
-        java.util.stream.Stream<String> stringStream=java.util.stream.Stream.concat(Arrays.asList(inputStr.split(" ")).stream(),intList.stream().map(x->x+""));
+        Stream<String> stringStream= Stream.concat(Arrays.asList(inputStr.split(" ")).stream(),intList.stream().map(x->x+""));
         stringStream.forEach(System.out::println);
 
         listInt.stream().map(x->x*x*x)
@@ -115,6 +115,31 @@ public class StreamExperiencedProgram {
      Map<String,Long>  map= Arrays.asList("AA","BB","CC","AA","CC").stream()
                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
          System.out.println(map);
+
+       List<String> arrList= Arrays.asList("AA","BB","CC","AA","CC");
+        Map<String,Long> dubMap=arrList.stream()
+                .filter(x->Collections.frequency(arrList,x)>1)
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+
+        System.out.println(dubMap);
+        List<Student> studentList1=new ArrayList<>();
+        studentList1.add(new Student(1,"Boobalan","IT",25,419));
+        studentList1.add(new Student(2,"Thiru","EEE",25,500));
+        studentList1.add(new Student(3,"Udhai","EEE",25,300));
+        Optional.ofNullable(studentList1)
+                .orElseGet(Collections::emptyList)
+                .stream()
+                .filter(Objects::nonNull)
+                .map(Student::getName)
+                .forEach(System.out::println);
+
+       int i= studentList1.stream().map(Student::getTotal).max(Comparator.naturalOrder()).get();
+       System.out.println(i);
+
+     Map<String,Long> mapword=    Arrays.stream(inputStr.split(""))
+               .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+       System.out.println(mapword);
+
     }
     private static List<Student> getStudentObj() {
         List<Student> studentList=new ArrayList<>();
