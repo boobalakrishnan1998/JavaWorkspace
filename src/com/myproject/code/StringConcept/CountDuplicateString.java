@@ -22,7 +22,7 @@ public class CountDuplicateString {
     private static void countDuplicateJava8groupingBy(String inputStr) {
         Map<Character, Long> result = inputStr.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
         for (Map.Entry<Character, Long> entry : result.entrySet()) {
-            System.out.println("the String '" + entry.getKey() + "' Occured in " + entry.getValue() + " times ");
+            System.out.println("the String '" + entry.getKey() + "' Occurred in " + entry.getValue() + " times ");
         }
     }
 
