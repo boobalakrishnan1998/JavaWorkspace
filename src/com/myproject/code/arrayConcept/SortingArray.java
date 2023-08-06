@@ -27,7 +27,7 @@ public class SortingArray {
         sortArrayJava8(array);
     }
     private static void sortArrayJava8(Integer[] arrayInt) {
-        Arrays.stream(arrayInt).sorted().forEach(System.out::println);
+        Arrays.stream(arrayInt).sorted(Integer::compareTo).forEach(System.out::println);
         Arrays.sort(arrayInt);
         Arrays.sort(arrayInt, Collections.reverseOrder());
         Arrays.sort(arrayInt,2,5);

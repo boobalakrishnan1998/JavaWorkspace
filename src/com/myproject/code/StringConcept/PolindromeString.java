@@ -1,6 +1,5 @@
 package com.myproject.code.StringConcept;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class PolindromeString {
@@ -27,7 +26,7 @@ public class PolindromeString {
                 return;
             }
         }
-        System.out.println("Given Input "+ inputStr +" is a polindrome");
+        System.out.println("Given Input "+ inputStr +" is a palindrome");
     }
 
     private static String checkpolindromeNormal(String inputStr) {

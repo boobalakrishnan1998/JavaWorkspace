@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Stream {
 
     public static void main(String[] args) {
-        Integer[] arrInt=new Integer[]{20,22,12,54,012,111,2,22,22,1,2,33,90,122,92,9,98,43,2,345,43,44,33,3,88};
+        Integer[] arrInt=new Integer[]{20,22,12,54,12,111,2,22,22,1,2,33,90,122,92,9,98,43,2,345,43,44,33,3,88};
         List<Integer> listInt= Arrays.asList(arrInt);
         //List<Integer> listInt= Arrays.asList(9,11,22,43,3,1,1,1,2,3,3,2,44,191,01,100,2,11,44);
         String inputStr="aava is Alive Awesome";
@@ -86,7 +86,8 @@ public class Stream {
     private static void sortTheElement(List<Integer> listInt) {
         listInt.stream().sorted().forEach(System.out::println);
         listInt.stream().sorted(Collections.reverseOrder()).forEach(System.out::println);
-        List<Student > sortedList = getStudentObj().stream()
+        List<Student > sortedList = getStudentObj()
+                .stream()
                 .sorted(Comparator.comparingInt(Student::getAge))
                 .collect(Collectors.toList());
     }
@@ -94,7 +95,8 @@ public class Stream {
     private static void findFirstNonRepeatedCharacter(String inputStr) {
         inputStr.chars().mapToObj(c->Character.toLowerCase((char)c))
                 .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
-                .entrySet().stream()
+                .entrySet()
+                .stream()
                 .filter(entry->entry.getValue()<=1L)
                 .map(x->x.getKey()).findFirst()
                 .ifPresent(System.out::println);

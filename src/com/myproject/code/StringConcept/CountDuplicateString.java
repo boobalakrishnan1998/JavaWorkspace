@@ -21,7 +21,7 @@ public class CountDuplicateString {
 
     private static void countDuplicateJava8groupingBy(String inputStr) {
         Map<Character, Long> result = inputStr.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
-        for (Map.Entry<Character, Long> entry : result.entrySet()) {
+        for (Map.Entry entry : result.entrySet()) {
             System.out.println("the String '" + entry.getKey() + "' Occurred in " + entry.getValue() + " times ");
         }
     }
@@ -47,6 +47,9 @@ public class CountDuplicateString {
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             System.out.println("the String '" + entry.getKey() + "' Occured in " + entry.getValue() + " times ");
         }
+        map.forEach((K,V)->{
+
+        });
     }
 
     private static void countDuplicateNormal(String inputStr) {

@@ -21,6 +21,13 @@ public class StreamExperiencedProgram {
         //List<Integer> listInt= Arrays.asList(9,11,22,43,3,1,1,1,2,3,3,2,44,191,01,100,2,11,44);
         String inputStr = "aavax is Alive Awesome";
         List<Student> studentList = getStudentObj();
+
+        String str="Ram Rahul Rohan Sidharth";
+
+       String str1= Arrays.asList(str.split(" ")).stream().max(Comparator.comparingInt(String::length)).get();
+       System.out.println(str1);
+
+
       /* listInt.stream().filter(n->n%2==0).forEach(System.out::print);
 
         listInt.stream()
@@ -53,15 +60,15 @@ public class StreamExperiencedProgram {
         Character ch = new Character('A');
         char cha = ch.charValue();
 
-        inputStr.chars()
-                .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s)))
-                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
-                .entrySet()
-                .stream()
-                .filter(entry -> entry.getValue() == 1L)
-                .map(entry->entry.getKey())
-                .findFirst()
-                .ifPresent(System.out::println);
+                inputStr.chars()
+                        .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s)))
+                        .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                        .entrySet()
+                        .stream()
+                        .filter(entry -> entry.getValue() == 1L)
+                        .map(entry->entry.getKey())
+                        .findFirst()
+                        .ifPresent(System.out::println);
 
               inputStr.chars()
                       .mapToObj(s->Character.toLowerCase(Character.valueOf((char) s)))
@@ -104,9 +111,10 @@ public class StreamExperiencedProgram {
         Stream<String> stringStream= Stream.concat(Arrays.asList(inputStr.split(" ")).stream(),intList.stream().map(x->x+""));
         stringStream.forEach(System.out::println);
 
-        listInt.stream().map(x->x*x*x)
-                .filter(x->x>50)
-                .forEach(System.out::println);
+                    listInt.stream()
+                                    .map(x->x*x*x)
+                                    .filter(x->x>50)
+                                    .forEach(System.out::println);
         Arrays.sort(intArr);
         Arrays.asList(intArr).stream().forEach(System.out::print);
 
@@ -136,7 +144,7 @@ public class StreamExperiencedProgram {
        int i= studentList1.stream().map(Student::getTotal).max(Comparator.naturalOrder()).get();
        System.out.println(i);
 
-     Map<String,Long> mapword=    Arrays.stream(inputStr.split(""))
+     Map<String,Long> mapword= Arrays.stream(inputStr.split(""))
                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
        System.out.println(mapword);
 
