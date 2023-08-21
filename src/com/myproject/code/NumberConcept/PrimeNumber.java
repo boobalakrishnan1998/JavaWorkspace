@@ -16,11 +16,7 @@ public class PrimeNumber {
         }
         lessTimeComplex(number);
     }
-    public void lessTimeComplex(int num) {
-         if(number==0||number==1){
-            System.out.println("Not a prime number");
-            return;
-        }
+    public static void lessTimeComplex(int num) {
         boolean flag = false;
         for (int i = 2; i <= num / 2; ++i) {
             // condition for nonprime number
