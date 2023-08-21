@@ -13,7 +13,7 @@ public class SecondLargestNumber {
                 secondLargest = i;
             }
         }
-        System.out.println("The secound largest Number is "+secondLargest);
+        System.out.println("The second largest Number is "+secondLargest);
     }
 
 

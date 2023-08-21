@@ -24,7 +24,7 @@ public class StreamExperiencedProgram {
 
         String str="Ram Rahul Rohan Sidharth";
 
-       String str1= Arrays.asList(str.split(" ")).stream().max(Comparator.comparingInt(String::length)).get();
+       String str1= Arrays.stream(str.split(" ")).max(Comparator.comparingInt(String::length)).get();
        System.out.println(str1);
 
 
@@ -47,7 +47,7 @@ public class StreamExperiencedProgram {
 
         listInt.stream()
                 .findFirst().ifPresent(System.out::println);
-        Long count = listInt.stream().mapToInt(x -> x).count();
+        Long count = listInt.stream().count();
         System.out.println(count);
 
         listInt.stream()
@@ -87,8 +87,7 @@ public class StreamExperiencedProgram {
                         .sorted(Collections.reverseOrder())
                         .forEach(System.out::println);
 
-              List<Integer> intList=  Arrays.stream(intArr)
-                        .boxed()
+              List<Integer> intList=  Arrays.stream(intArr).boxed()
                         .collect(Collectors.toList());
               Set<Integer> disInt=new HashSet(intList);
               if(disInt.size()==intList.size())
@@ -148,8 +147,41 @@ public class StreamExperiencedProgram {
                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
        System.out.println(mapword);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-    private static List<Student> getStudentObj() {
+    static List<Student> getStudentObj() {
         List<Student> studentList=new ArrayList<>();
         studentList.add(new Student(1,"Boobalan","IT",25,419));
         studentList.add(new Student(2,"Thiru","EEE",25,500));

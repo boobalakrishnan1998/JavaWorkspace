@@ -104,6 +104,7 @@ public class Stream {
 
     private static void findMinMaxAverage(List<Integer> listInt) {
         listInt.stream().max(Comparator.naturalOrder()).ifPresent(System.out::println);
+        listInt.stream().mapToInt(Integer::intValue).max();
         listInt.stream().max((a, b)->a.compareTo(b)).ifPresent(System.out::println);
         listInt.stream().max(Integer::compareTo).ifPresent(System.out::println);
         listInt.stream().min(Comparator.naturalOrder()).ifPresent(System.out::println);
