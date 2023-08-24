@@ -37,6 +37,24 @@ public class InterviewQuestion {
         int sum1= l1.stream().filter(i->i%2!=0).mapToInt(n->n*n).sum();
         double average= l1.stream().filter(i->i%2!=0).mapToInt(n->n*n).average().getAsDouble();
 
+        //Coforge 
+        List<Integer> myList = Arrays.asList(1,4,4,8,8,7);// 2 3 5 6
+
+            String name="boobalakrishnan";
+
+          //myList.stream().distinct().forEach(System.out::println);
+
+         Map<Character,Long> nameMap= name.chars().mapToObj(s->(char)(s))
+                  .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+         for(Map.Entry<Character,Long> map:nameMap.entrySet()){
+              System.out.println("The character "+map.getKey()+" occurred in "+map.getValue()+" times");
+         }
+
+
+         /* myList=myList.stream().sorted().collect(Collectors.toList());
+          Set<Integer> setInt=new HashSet<>(myList);
+          IntStream.range(1,myList.get(myList.size()-1)).filter((s)->setInt.add(s)).forEach(System.out::println);*/
+
 
 
     }
