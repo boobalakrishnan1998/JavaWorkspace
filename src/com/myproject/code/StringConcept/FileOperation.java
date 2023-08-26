@@ -11,10 +11,10 @@ import java.util.Scanner;
 public class FileOperation {
 
     public static void main(String[] args) throws IOException {
-
+        FileReadWrite fileReadWrite=new FileReadWrite();
         String filePath="C:\\Users\\DELL\\Documents\\Test.txt.txt";
-        //fileReadByBufferedReader(filePath);//BufferedReader class for Reading text file
-        //fileReadByFileReader(filePath);//FileReader class for Reading text file
+        fileReadByBufferedReader(filePath);//BufferedReader class for Reading text file
+        fileReadByFileReader(filePath);//FileReader class for Reading text file
         fileReadByScanner(filePath);//Scanner class for reading text file
         fileReadByAsString(filePath);//Read a text file as String
         print(filePath);
