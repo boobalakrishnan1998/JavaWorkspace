@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Stream {
+public class Streams {
 
     public static void main(String[] args) {
         Integer[] arrInt=new Integer[]{20,22,12,54,12,111,2,22,22,1,2,33,90,122,92,9,98,43,2,345,43,44,33,3,88};

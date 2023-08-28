@@ -1,15 +1,20 @@
 package com.myproject.code.StringConcept;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FileReadWrite {
 
     public static void main(String[] args) throws IOException {
         String filePath="C:\\Users\\DELL\\Music\\JavaWorkspace\\src\\com\\myproject\\code\\StringConcept\\sample";
-
-        fileReadWrite();
-        readFileByChar(filePath);
+        //fileReadWrite();
+        //readFileByChar(filePath);
+     List<Character> l= Files.lines(Paths.get(filePath)).toString().chars().mapToObj(c->(char) c).filter(Character::isLetterOrDigit).collect(Collectors.toList());
+        System.out.println(l);
     }
 
     public static String fileReadWrite() {
@@ -61,8 +66,6 @@ public class FileReadWrite {
         }
         return builder.toString();
     }
-
-
 
 
     private static void printAscii(){
