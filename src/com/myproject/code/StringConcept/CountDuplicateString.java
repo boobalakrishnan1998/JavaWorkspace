@@ -28,7 +28,7 @@ public class CountDuplicateString {
 
     private static void countDuplicateJava8Set(String inputStr) {
         Set<String> characterSet = new HashSet<>();
-        Set<String> characterSetTemp = new HashSet<>();
+        Set<String> characterSetTemp;
         characterSetTemp = Arrays.asList(inputStr.split("")).stream().filter(c -> !characterSet.add(c)).collect(Collectors.toSet());
         System.out.println("the String " + characterSetTemp.toString() + " are duplicate");
     }

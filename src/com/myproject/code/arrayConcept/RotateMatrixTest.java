@@ -1,7 +1,8 @@
 package com.myproject.code.arrayConcept;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class RotateMatrixTest {
 
@@ -14,8 +15,7 @@ public class RotateMatrixTest {
                 {8, 5, 2},
                 {9, 6, 3}};
         matrix= RotateMatrix.rotateMatrix(matrix);
-        Assert.assertArrayEquals(ExMatrix,matrix);
-
+        Assertions.assertArrayEquals(ExMatrix,matrix);
     }
 
 

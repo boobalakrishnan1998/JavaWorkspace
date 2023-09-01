@@ -1,9 +1,6 @@
 package com.myproject.code.StringConcept;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -23,6 +20,7 @@ public class FileOperation {
         //With using loops
         File file=new File(filePath);
         Scanner sc=new Scanner(file);
+
         StringBuilder resultStringBuilder = new StringBuilder();
         while(sc.hasNextLine()){
             resultStringBuilder.append(sc.nextLine());
