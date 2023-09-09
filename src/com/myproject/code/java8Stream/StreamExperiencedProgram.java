@@ -133,6 +133,12 @@ public class StreamExperiencedProgram {
         studentList1.add(new Student(1,"Boobalan","IT",25,419));
         studentList1.add(new Student(2,"Thiru","EEE",25,500));
         studentList1.add(new Student(3,"Udhai","EEE",25,300));
+
+       Map<Integer, List<String>> map1= studentList1
+               .stream()
+               .sorted(Comparator.comparing(Student::getId))
+               .collect(Collectors.groupingBy(Student::getId,Collectors.mapping(Student::getName,Collectors.toList())));
+
         Optional.ofNullable(studentList1)
                 .orElseGet(Collections::emptyList)
                 .stream()

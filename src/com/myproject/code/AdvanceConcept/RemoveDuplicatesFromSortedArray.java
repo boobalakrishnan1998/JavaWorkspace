@@ -3,6 +3,12 @@ package com.myproject.code.AdvanceConcept;
 public class RemoveDuplicatesFromSortedArray {
      public static void main(String[] args) {
             int[] intArr = new int[]{0, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 7, 8, 9};
+
+            for(int n:intArr){
+                System.out.println(n);
+            }
+
+
             /*int j = 1;
             for (int i = 1; i < intArr.length; i++) {
                    if(intArr[i]!=intArr[i-1]){
