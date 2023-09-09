@@ -7,7 +7,9 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamExperiencedProgram {
@@ -16,8 +18,10 @@ public class StreamExperiencedProgram {
     public static void main(String[] args) {
         Integer[] arrInt = new Integer[]{20, 22, 9, 8, 9, 8, 8, 0, 0, 0, 12, 54, 012, 111, 2, 22, 22, 1, 2, 33, 90, 122, 92, 9, 98, 43, 2, 345, 43, 44, 33, 3, 88};
         int[] intArr = new int[]{20, 22, 9, 8, 9, 8, 8, 0, 0, 0, 12, 54, 012, 111, 2, 22, 22, 1, 2, 33, 90, 122, 92, 9, 98, 43, 2, 345, 43, 44, 33, 3, 88};
-
-        List<Integer> listInt = Arrays.asList(arrInt);
+        Predicate<Integer> Isprime = num-> IntStream.range(2,num/2).noneMatch(n->num%n==0);
+        List<Integer> listInt=IntStream.range(0,100).boxed().filter(x->(x!=0&&x!=1)).filter(Isprime).collect(Collectors.toList());
+        System.out.println(listInt);
+        List<Integer> listInt1 = Arrays.asList(arrInt);
         //List<Integer> listInt= Arrays.asList(9,11,22,43,3,1,1,1,2,3,3,2,44,191,01,100,2,11,44);
         String inputStr = "aavax is Alive Awesome";
         List<Student> studentList = getStudentObj();

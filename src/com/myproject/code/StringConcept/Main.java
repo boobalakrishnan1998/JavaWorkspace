@@ -17,7 +17,7 @@ public class Main {
         // System.out.println(len);
         int number= 17;
         Predicate<Integer> Isprime =num-> IntStream.range(2,num/2).noneMatch(n->num%n==0);
-        List<Integer> listInt=IntStream.range(0,100).boxed().filter(x->(x!=0&&x!=1)).filter(Isprime).collect(Collectors.toList());
+        List<Integer> listInt=IntStream.range(2,100).boxed().filter(Isprime).collect(Collectors.toList());
         System.out.println(listInt);
     }
     public static int lengthOfLongestSubstring(String s) {

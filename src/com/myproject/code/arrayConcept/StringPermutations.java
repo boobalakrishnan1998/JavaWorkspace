@@ -8,10 +8,10 @@ public class StringPermutations {
 
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
-       String str= sc.nextLine();
+       String str="abc"; //sc.nextLine();
        //permuatations("",str);
-        permuataion("",str);
-
+        ArrayList<String> li=  permuataion("",str);
+       System.out.println(li);
     }
 
     private static void permuatations(String perm, String word) {

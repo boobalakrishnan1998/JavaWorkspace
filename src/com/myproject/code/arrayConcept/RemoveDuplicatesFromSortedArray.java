@@ -1,4 +1,4 @@
-package com.myproject.code.AdvanceConcept;
+package com.myproject.code.arrayConcept;
 
 public class RemoveDuplicatesFromSortedArray {
      public static void main(String[] args) {
