@@ -7,7 +7,7 @@ class MediumOfTwoSortedArrayTest {
 
     @Test
     void TestMediumOfTwoArray(){
-       double sum= MediumOfTwoSortedArray.getMeddle(new int[]{1,2},new int[]{3,4});
+       double sum= MedianOfTwoSortedArray.getMeddle(new int[]{1,2},new int[]{3,4});
         Assertions.assertEquals(2.5, sum);
     }
 

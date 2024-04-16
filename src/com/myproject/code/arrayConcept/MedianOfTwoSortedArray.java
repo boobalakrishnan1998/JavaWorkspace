@@ -1,6 +1,6 @@
 package com.myproject.code.arrayConcept;
 
-public class MediumOfTwoSortedArray {
+public class MedianOfTwoSortedArray {
 
     public static void main(String[] args) {
         int[] nums1 = new int[]{1, 2};
