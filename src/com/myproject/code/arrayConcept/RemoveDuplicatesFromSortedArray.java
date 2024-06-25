@@ -8,7 +8,6 @@ public class RemoveDuplicatesFromSortedArray {
                 System.out.println(n);
             }
 
-
             /*int j = 1;
             for (int i = 1; i < intArr.length; i++) {
                    if(intArr[i]!=intArr[i-1]){
