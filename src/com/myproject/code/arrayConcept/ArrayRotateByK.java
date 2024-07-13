@@ -12,6 +12,7 @@ public class ArrayRotateByK {
         int[] array = {1, 2, 3, 4, 5, 6, 9, 22, 33, 44, 55, 66, 77, 88, 99, 100};
         int key = 5;
         Arrays.stream(rotateArrayByOne(array, key)).forEach(System.out::println);
+        Arrays.stream(leftRotate(array, array.length, key)).forEach(System.out::println);
     }
 
     public static int[] rotateArrayByOne(int[] array, int key) {
@@ -36,5 +37,29 @@ public class ArrayRotateByK {
         }
 
         return array;
+    }
+    static int[] leftRotate(int arr[], int n, int d) {
+
+        // Get the effective number of rotations: if more the length
+        d = d % n;
+
+        //step 1:
+        reverse(arr, 0, d - 1);
+
+        //step 2:
+        reverse(arr, d, n - 1);
+
+        //step 3:
+        reverse(arr, 0, n - 1);
+        return arr;
+    }
+    static void reverse(int arr[], int start, int end) {
+        while (start <= end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
     }
 }
