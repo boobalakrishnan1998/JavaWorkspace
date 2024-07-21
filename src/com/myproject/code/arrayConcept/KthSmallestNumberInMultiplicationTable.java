@@ -12,37 +12,20 @@ public class KthSmallestNumberInMultiplicationTable {
         int high = m * n;
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (isSmallestNumber(mid, n, k)) {
-                high = mid;
-
-            } else {
+            if (isSmallestNumber(mid, n, m) < k) {
                 low = mid + 1;
-
+            } else {
+                high = mid - 1;
             }
         }
         return low;
     }
 
-    private static boolean isSmallestNumber(int mid, int m, int k) {
+    private static int isSmallestNumber(int mid, int n, int m) {
         int count = 0;
         for (int i = 1; i <= m; i++) {
-            count += Math.min(mid / i, m);
+            count += Math.min(mid / i, n);
         }
-        return count >= k;
-    }
-//TODo understand the correct your program
-    public int findKthNumber(int m, int n, int k) {
-        int lo=0, hi=m*n;
-        while (lo < hi) {
-            int mid=(lo+hi)/2, count=0;
-            // check how many numbers are smaller than mid
-            for (int i=1; i<=m; i++)
-                count += n < mid/i ? n : mid/i;
-            if (count >= k)  // target <= mid
-                hi = mid;
-            else  // target > mid
-                lo = mid+1;
-        }
-        return lo;
+        return count;
     }
 }
