@@ -11,7 +11,7 @@ public class ConvertArrayToDLL {
         }
     }
 
-    private static Node convertToDLL(int[] arr) {
+    public static Node convertToDLL(int[] arr) {
         Node head = new Node(arr[0],null,null);
         Node prev = head;
         for (int i = 1; i < arr.length; i++) {
