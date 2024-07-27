@@ -17,7 +17,7 @@ public class InsertInDLL {
         printLL(head4);
     }
 
-    private static void printLL(Node head) {
+    static void printLL(Node head) {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
