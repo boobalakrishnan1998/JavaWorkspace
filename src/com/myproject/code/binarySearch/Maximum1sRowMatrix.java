@@ -1,4 +1,4 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.binarySearch;
 
 import java.util.*;
 

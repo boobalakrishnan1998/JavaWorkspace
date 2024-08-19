@@ -1,43 +1,51 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.binarySearch;
 
-public class MinimumElementInRotatedSortedArray {
+public class NumberOfRotationInSortedArray {
     public static void main(String[] args) {
-        int[] arr = {12, 13, 15, 20,0, 3, 5, 7, 9, 10,};
+        int[] arr = {12, 13, 15, 20, 0, 3, 5, 7, 9, 10,};
         int ans = findMinElement(arr);
         System.out.println(ans);
         //SearchRotatedSortedArrayWithDuplicates
-        int[] arr1 = {3,3,0,1,2,3,3,3,3,3,3,3};
+        int[] arr1 = {3, 3, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3};
         int ans1 = findMinElementWitDuplicates(arr1);
         System.out.println(ans1);
     }
 
     private static int findMinElement(int[] arr) {
         int low = 0, high = arr.length - 1;
-        int ans=Integer.MAX_VALUE;
-
+        int ans = Integer.MAX_VALUE;
+        int index = -1;
         while (low <= high) {
+            int mid = (low + high) / 2;
             //the minimum in that search space:
             if (arr[low] <= arr[high]) {
                 if (arr[low] < ans) {
+                    index = low;
                     ans = arr[low];
                 }
                 break;
             }
-            int mid = (low + high) / 2;
             if (arr[low] <= arr[mid]) {
-               ans= Math.min(ans,arr[low]);
-               low=mid+1;
+                if (ans > arr[low]) {
+                    ans = arr[low];
+                    index = low;
+                }
+                low = mid + 1;
             } else {
-                ans= Math.min(ans,arr[mid]);
-                high=mid-1;
+                if (ans > arr[mid]) {
+                    ans = arr[mid];
+                    index = mid;
+                }
+                high = mid - 1;
             }
         }
-        return ans;
+        return index;
     }
 
     private static int findMinElementWitDuplicates(int[] arr) {
         int low = 0, high = arr.length - 1;
-        int ans=Integer.MAX_VALUE;
+        int ans = Integer.MAX_VALUE;
+        int index=-1;
         while (low <= high) {
             int mid = (low + high) / 2;
             if (arr[low] == arr[mid] && arr[mid] == arr[high]) {
@@ -46,13 +54,19 @@ public class MinimumElementInRotatedSortedArray {
                 continue;
             }
             if (arr[low] <= arr[mid]) {
-                ans= Math.min(ans,arr[low]);
-                low=mid+1;
+                if (ans > arr[low]) {
+                    ans = arr[low];
+                    index = low;
+                }
+                low = mid + 1;
             } else {
-                ans= Math.min(ans,arr[mid]);
-                high=mid-1;
+                if (ans > arr[mid]) {
+                    ans = arr[mid];
+                    index = mid;
+                }
+                high = mid - 1;
             }
         }
-        return ans;
+        return index;
     }
 }

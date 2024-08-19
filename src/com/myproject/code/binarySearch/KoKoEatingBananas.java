@@ -1,4 +1,4 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.binarySearch;
 
 public class KoKoEatingBananas {
     public static void main(String[] args) {
