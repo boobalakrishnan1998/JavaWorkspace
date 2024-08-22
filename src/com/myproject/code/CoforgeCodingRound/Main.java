@@ -10,7 +10,7 @@ public class Main {
 */
 
     public static void main(String[] args) throws FileNotFoundException {
-        String filePath="C:\\Users\\boobalakrishnan.v\\Documents\\CodeTest\\src\\input";
+        String filePath="C:\\Users\\DELL\\Music\\JavaWorkspace\\src\\com\\myproject\\code\\CoforgeCodingRound\\input";
         List<Integer> longestLen=  findAllLongestSubString(filePath);
         longestLen.forEach(System.out::println);
     }

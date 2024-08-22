@@ -1,4 +1,4 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.Matrix;
 import java.util.*;
 
 public class SetMatrix0 {

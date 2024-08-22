@@ -7,9 +7,9 @@ import java.util.List;
 
 public class MergeIntervals {
     public static void main(String[] args) {
-        int[][] arr = {{1, 3}, {8, 10}, {2, 6}, {15, 18}};
+        //int[][] arr = {{1, 3}, {8, 10}, {2, 6}, {15, 18}};
         //sorted array
-        // int[][] arr = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        int[][] arr = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         List<List<Integer>> ans = mergeOverlappingIntervals(arr);
         System.out.println(Arrays.toString(Arrays.stream(mergeOverlappingIntervals1(arr)).toArray()));
     }
@@ -36,14 +36,8 @@ public class MergeIntervals {
     }
 
     private static int[][] mergeOverlappingIntervals1(int[][] intervals) {
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
-            }
-        });
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
         List<int[]> ans = new ArrayList<>();
-
         for (int i = 0; i < intervals.length; i++) {
             if (ans.isEmpty() || intervals[i][0] > ans.get(ans.size() - 1)[1]) {
                 ans.add(new int[]{intervals[i][0], intervals[i][1]});

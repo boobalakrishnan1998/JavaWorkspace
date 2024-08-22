@@ -1,4 +1,4 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.Matrix;
 
 public class findElementInSortedMatrix_II {
 

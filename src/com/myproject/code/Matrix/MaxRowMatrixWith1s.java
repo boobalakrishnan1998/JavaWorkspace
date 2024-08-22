@@ -1,4 +1,4 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.Matrix;
 
 public class MaxRowMatrixWith1s {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.myproject.code.arrayConcept;
+package com.myproject.code.Matrix;
 
 public class RotateMatrixbyK {
         int[][] rotateMatrix(int N, int M, int K, int Mat[][]) {
