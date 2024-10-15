@@ -1,9 +1,9 @@
 package com.myproject.code.tree;
 
 public class Node {
-    Integer data;
-    Node right;
-    Node left;
+    public Integer data;
+    public Node right;
+    public Node left;
 
     public Node(int key) {
         this.data = key;
