@@ -16,28 +16,45 @@ public class DeleteNodeInBST {//Root , Left , Right
         root.left.right.right = new Node(9);
         root.right.left = new Node(11);
         root.right.right = new Node(14);
-
-        int node = 1;
-        deleteNodeInBST(root, node);
+        int node = 5;
+        Node ans = deleteNodeInBST(root, node);
         System.out.println();
     }
 
-    public static void deleteNodeInBST(Node root, int target) {
-        Node prev = null;
-        Node cur = root;
+    public static Node deleteNodeInBST(Node root, int target) {
+        if (root == null)
+            return null;
+        if (root.data == target)
+            return connecter(root);
         while (true) {
-            if (cur.data == target) {
-                if(prev.data < cur.right.data){
-                    prev.right=cur.right;
+            if (root.data > target) {
+                if (root.left != null && root.left.data == target) {
+                    root.left = connecter(root.left);
+                    break;
+                } else {
+                    root = root.left;
                 }
-                break;
-            }
-            if (cur.data > target) {
-                cur = cur.left;
             } else {
-                cur = cur.right;
+                if (root.right != null && root.right.data == target) {
+                    root.right = connecter(root.right);
+                    break;
+                } else {
+                    root = root.right;
+                }
             }
-            prev = cur;
         }
+        return root;
+    }
+
+    private static Node connecter(Node root) {
+        if (root.left == null) return root.right;
+        if (root.right == null) return root.left;
+        Node leftChild = root.left;
+        Node leftMostChildInRightTree = root.right;
+        while (leftMostChildInRightTree.left != null) {
+            leftMostChildInRightTree = leftMostChildInRightTree.left;
+        }
+        leftMostChildInRightTree.left = leftChild;
+        return root.right;
     }
 }
