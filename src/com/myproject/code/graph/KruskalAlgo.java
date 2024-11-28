@@ -55,7 +55,7 @@ public class KruskalAlgo {
             int wt = edge[0];
             int u = edge[1];
             int v = edge[2];
-            if (ds.findUltimateParent(u) != ds.findUltimateParent(v)) {
+            if (ds.findUPar(u) != ds.findUPar(v)) {
                 sum += wt;
                 ds.unionBySize(u, v);
             }

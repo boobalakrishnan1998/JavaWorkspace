@@ -42,19 +42,19 @@ public class DisjointSet {
     }
 
     private boolean find(int u, int v) {
-        return findUltimateParent(parent[u]) == findUltimateParent(parent[v]);
+        return findUPar(parent[u]) == findUPar(parent[v]);
     }
 
-    int findUltimateParent(int node) {
+    int findUPar(int node) {
         if (node == parent[node]) {
             return node;
         }
-        return parent[node] = findUltimateParent(parent[node]);
+        return parent[node] = findUPar(parent[node]);
     }
 
     private void unionByRank(int u, int v) {
-        int pu = findUltimateParent(u);
-        int pv = findUltimateParent(v);
+        int pu = findUPar(u);
+        int pv = findUPar(v);
         if (pu == pv) return;
         if (rank[pu] > rank[pv]) {
             parent[pv] = pu;
@@ -67,9 +67,9 @@ public class DisjointSet {
         }
     }
 
-     void unionBySize(int u, int v) {
-        int pu = findUltimateParent(u);
-        int pv = findUltimateParent(v);
+    void unionBySize(int u, int v) {
+        int pu = findUPar(u);
+        int pv = findUPar(v);
         if (pu == pv) return;
         if (size[pu] > rank[pv]) {
             parent[pv] = pu;
